@@ -5,7 +5,7 @@
 :root {
 	--brand-color1: #ee2d24;
 	--brand-color2: #fff;
-	--brand-color3: #121233;
+	--brand-color3: ;
 	--brand-color4: ;
 	--color-black: #000;
 	--color-white: #fff;
@@ -61,11 +61,12 @@ p, ul, ol {
 }
 
 a {
-	color: var(--brand-color1);
+	color: var(--text-light);
+	text-decoration: underline;
 }
 
 a:hover {
-	color: var(--color-white);
+	color: var(--text-dark);
 }
 
 .center-text {
@@ -86,7 +87,7 @@ html::-webkit-scrollbar {
 	width: 5px;
 }
 html::-webkit-scrollbar-thumb {
-	background: var(--brand-color3);
+	background: var(--brand-color1);
 }
 html::-webkit-scrollbar-track {
 	background: transparent;
@@ -94,7 +95,7 @@ html::-webkit-scrollbar-track {
 /* Standard version (Firefox only for now) */
 html {
 	scrollbar-width: thin;
-	scrollbar-color: var(--brand-color3) transparent;
+	scrollbar-color: var(--brand-color1) transparent;
 }
 
 body {
@@ -108,8 +109,10 @@ body {
 
 header {
 	width: 100%;
+	height: 60vh;
 	z-index: 10;
-	background: var(--brand-color1)
+	background: var(--brand-color1);
+	position: relative;
 }
 
 header nav {
@@ -127,15 +130,21 @@ header svg {
 }
 
 header svg:hover {
-	fill: var(--brand-color3);
+	fill: var(--brand-color1);
 }
 
 main {
-	background: var(--brand-color1);
+	background: var(--brand-color2);
 }
 
 section {
-	padding: var(--xxl-space) 0;
+	padding: var(--lg-space) 0;
+}
+
+footer {
+	background: var(--brand-color1);
+	color: var(--text-light);
+	padding: var(--sm-space);
 }
 
 /* RECURRING STYLES */
@@ -145,18 +154,19 @@ section {
 	font-weight: 700;
 	font-size: 24px;
 	text-transform: uppercase;
+	text-decoration: none;
 	white-space: nowrap;
 	padding: var(--xs-space) var(--md-space) var(--xs-space) var(--md-space);
-	border: 3px solid var(--brand-color3);
+	border: 3px solid var(--brand-color1);
 	border-radius: var(--lg-space);
-	color: var(--brand-color3);
+	color: var(--brand-color1);
 	cursor: pointer;
 	position: relative;
 	top: 25%;
 }
 
 .round-btn:hover {
-	background: var(--brand-color3);
+	background: var(--brand-color1);
 	color: var(--brand-color2);
 }
 
@@ -182,8 +192,33 @@ h1 {
 	font-style: italic;
 	font-size: 30px;
 	text-transform: uppercase;
-	color: var(--brand-color3);
+	color: var(--brand-color2);
 	padding-bottom: .5em;
+}
+
+.carousel {
+	position: absolute;
+	top: 0;
+	z-index: -10;
+	height: 100%;
+}
+
+.carousel::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: var(--brand-color1);
+	mix-blend-mode: multiply;
+}
+
+.slide {
+	height: 100%;
+}
+
+.slide img {
+	height: 100%;
 }
 
 /* Schedule */
@@ -200,7 +235,7 @@ h1 {
 .card {
 	position: relative;
 	padding: 0 0 0 var(--md-space);
-	border-left: 2px solid var(--brand-color2);
+	border-left: 2px solid var(--brand-color1);
 }
 
 .card h3 {
@@ -209,7 +244,7 @@ h1 {
 	font-style: italic;
 	text-transform: uppercase;
 	position: relative;
-	color: var(--brand-color2);
+	color: var(--brand-color1);
 }
 
 .card h4 {
@@ -217,7 +252,7 @@ h1 {
 	line-height: 1.2em;
 	padding-bottom: var(--sm-space);
 	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
-	color: var(--text-light);
+	color: var(--brand-color1);
 }
 
 /* Register */
@@ -229,23 +264,20 @@ h1 {
 
 /* Footer */
 
-footer {
-	background: var(--brand-color3);
-	color: var(--text-light);
-}
-
-#insta {
-	display: inline-block;
-	margin: var(--md-space);
+#insta, #insta + p {
+	display: inline;
 }
 
 #insta svg {
-	width: 40px;
+	width: 20px;
+	position: relative;
+	top: 3px;
+	right: 3px;
 	fill: var(--color-white);
 }
 
 #insta:hover svg {
-	fill: var(--brand-color1);
+	fill: var(--color-black);
 }
 
 /* MEDIA QUERIES */
@@ -255,18 +287,9 @@ footer {
 		font-size: 16px;
 	}
 
-	footer {
-		padding: var(--lg-space) var(--sm-margin);
-	}
-
 }
 
-@media screen and (min-width: 1000px) {
-	footer {
-		padding: var(--lg-space) var(--md-margin);
-	}
-
-}
+@media screen and (min-width: 1000px) {}
 
 @media screen and (max-width: 700px) {
 	h1 {
@@ -275,14 +298,10 @@ footer {
 	}
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 2000px) {
 
 	#schedule {
 		padding: var(--xxl-space) var(--lg-margin);
-	}
-
-	footer {
-		padding: var(--lg-space) var(--lg-margin);
 	}
 
 }
