@@ -42,7 +42,7 @@
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "peridot-pe-variable", sans-serif;
-	font-variation-settings: "wght" 650, "wdth" 175, "ital" 0;
+	font-variation-settings: "wght" 650, "wdth" 150, "ital" 0;
 	padding-bottom: 1em;
 }
 
@@ -118,9 +118,9 @@ header {
 header nav {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	padding: var(--sm-space) 0;
+	padding: var(--md-space) 0;
 	margin: 0 var(--sm-margin);
 }
 
@@ -176,24 +176,29 @@ footer {
 /* Hero */
 
 #hero {
-	padding: var(--xxl-space) 0 var(--lg-space) 0;
-	margin: unset;
+	position: absolute;
+	top: 0;
+	padding: unset;
+	width: 100%;
+	height: 100%;
 }
 
 h1 {
-	font-size: 3.5rem;
+	font-size: 4rem;
 	color: var(--text-light);
-	padding-bottom: 0;
+	padding: var(--md-space);
 }
 
 #hero p {
-	font-family: "nitti", monospace;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 30px;
+	font-family: "peridot-pe-variable", sans-serif;
+	font-variation-settings: "wght" 950, "wdth" 50, "ital" 0;
+	font-size: 3rem;
 	text-transform: uppercase;
 	color: var(--brand-color2);
-	padding-bottom: .5em;
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	padding: var(--md-space);
 }
 
 .carousel {
