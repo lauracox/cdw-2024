@@ -248,6 +248,15 @@ footer {
 	fill: var(--brand-color1);
 }
 
+#switch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
+	background: white;
+	z-index: 100;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1000px) {
