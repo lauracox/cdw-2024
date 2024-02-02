@@ -4,8 +4,8 @@
 /* VARIABLES */
 :root {
 	--brand-color1: #ee2d24;
-	--brand-color2: #121233;
-	--brand-color3: #ffbd17;
+	--brand-color2: #fff;
+	--brand-color3: #121233;
 	--brand-color4: ;
 	--color-black: #000;
 	--color-white: #fff;
@@ -61,7 +61,7 @@ p, ul, ol {
 }
 
 a {
-	color: var(--brand-color3);
+	color: var(--brand-color1);
 }
 
 a:hover {
@@ -86,7 +86,7 @@ html::-webkit-scrollbar {
 	width: 5px;
 }
 html::-webkit-scrollbar-thumb {
-	background: var(--brand-color2);
+	background: var(--brand-color3);
 }
 html::-webkit-scrollbar-track {
 	background: transparent;
@@ -94,7 +94,7 @@ html::-webkit-scrollbar-track {
 /* Standard version (Firefox only for now) */
 html {
 	scrollbar-width: thin;
-	scrollbar-color: var(--brand-color2) transparent;
+	scrollbar-color: var(--brand-color3) transparent;
 }
 
 body {
@@ -123,7 +123,7 @@ header nav {
 
 header svg {
 	height: 50px;
-	fill: var(--color-white);
+	fill: var(--brand-color2);
 }
 
 header svg:hover {
@@ -143,13 +143,12 @@ section {
 .round-btn {
 	font-family: "nitti", monospace;
 	font-weight: 700;
-	font-size: 32px;
+	font-size: 24px;
 	text-transform: uppercase;
 	white-space: nowrap;
 	padding: var(--xs-space) var(--md-space) var(--xs-space) var(--md-space);
-	border: 3px solid var(--brand-color2);
+	border: 3px solid var(--brand-color3);
 	border-radius: var(--lg-space);
-	background: var(--brand-color2);
 	color: var(--brand-color3);
 	cursor: pointer;
 	position: relative;
@@ -183,32 +182,8 @@ h1 {
 	font-style: italic;
 	font-size: 30px;
 	text-transform: uppercase;
-	color: var(--brand-color2);
-	padding-bottom: 2em;
-}
-
-.carousel {
-	width: 100%;
-	height: 400px;
-	margin-top: 1rem;
-}
-
-.carousel::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	background-color: var(--brand-color1);
-	mix-blend-mode: multiply;
-}
-
-.slide {}
-
-.slide img {
-	width: 100%;
-	height: 400px;
-	object-fit: cover;
+	color: var(--brand-color3);
+	padding-bottom: .5em;
 }
 
 /* Schedule */
@@ -225,7 +200,7 @@ h1 {
 .card {
 	position: relative;
 	padding: 0 0 0 var(--md-space);
-	border-left: 2px solid var(--color-white);
+	border-left: 2px solid var(--brand-color2);
 }
 
 .card h3 {
@@ -234,7 +209,7 @@ h1 {
 	font-style: italic;
 	text-transform: uppercase;
 	position: relative;
-	color: var(--color-white);
+	color: var(--brand-color2);
 }
 
 .card h4 {
@@ -255,7 +230,7 @@ h1 {
 /* Footer */
 
 footer {
-	background: var(--brand-color2);
+	background: var(--brand-color3);
 	color: var(--text-light);
 }
 
@@ -266,11 +241,11 @@ footer {
 
 #insta svg {
 	width: 40px;
-	fill: var(--brand-color3);
+	fill: var(--color-white);
 }
 
 #insta:hover svg {
-	fill: var(--color-white);
+	fill: var(--brand-color1);
 }
 
 #switch {
@@ -289,10 +264,6 @@ footer {
 		font-size: 16px;
 	}
 
-	header nav {
-		margin: 0 var(--sm-margin);
-	}
-
 	footer {
 		padding: var(--lg-space) var(--sm-margin);
 	}
@@ -300,10 +271,6 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
-	header nav {
-		margin: 0 var(--md-margin);
-	}
-
 	footer {
 		padding: var(--lg-space) var(--md-margin);
 	}
@@ -318,9 +285,6 @@ footer {
 }
 
 @media screen and (min-width: 1600px) {
-	header nav {
-		margin: 0 var(--lg-margin);
-	}
 
 	#schedule {
 		padding: var(--xxl-space) var(--lg-margin);
