@@ -184,6 +184,10 @@ h1 {
 	font-size: 30px;
 	text-transform: uppercase;
 	color: var(--brand-color2);
+	padding-bottom: .5em;
+}
+
+#hero p:last-of-type {
 	padding-bottom: 2em;
 }
 
