@@ -49,58 +49,54 @@
 
     <section id="hero" class="center-text">
       <p>The Fifth</p>
-      <h1>Charlottesville Design&nbsp;Week</h1>
+      <h1>Charlottesville</br>Design&nbsp;Week</h1>
       <p>April 9&ndash;12, 2024</p>
       <a class="round-btn" href="#register">Register</a>
     </section>
 
     <div class="carousel">
       <figure class="slide">
-        <picture><img src="img/forum1.jpg" alt=""></picture>
+        <picture><img src="img/forum1.jpg" alt="Presentation of motion graphics by Gerard Mallandrich. Design talks during the Forum cover branding, UI/UX, architecture, and more."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/tour2.jpg" alt=""></picture>
+        <picture><img src="img/workshop1.jpg" alt="Sign Painting workshop, led by John Downer. This year's event includes workshops on typography, design systems, branding, and more."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/workshop1.jpg" alt=""></picture>
+        <picture><img src="img/tour4.jpg" alt="Open House at the CODE Building."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/tour4.jpg" alt=""></picture>
+        <picture><img src="img/showcase1.jpg" alt="At the Design Marathon Showcase, local creatives present their solutions to local non-profit design challenges."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/showcase1.jpg" alt=""></picture>
+        <picture><img src="img/workshop2.jpg" alt="Motion graphics workshop, by Gerard Mallandrich. This year's event includes workshops on typography, design systems, branding, and more."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/workshop2.jpg" alt=""></picture>
+        <picture><img src="img/tour5.jpg" alt="Open Houses let you explore all of Downtown's design destinations, including the Virginia Center for the Book letterpress print shop."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/tour5.jpg" alt=""></picture>
+        <picture><img src="img/marathon1.jpg" alt="At the Design Marathon, local creatives develop  solutions to local non-profit design challenges."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/marathon1.jpg" alt=""></picture>
+        <picture><img src="img/tour1.jpg" alt="Open Houses let you explore all of Downtown's design destinations."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/tour1.jpg" alt=""></picture>
+        <picture><img src="img/workshop4.jpg" alt="Sign Painting workshop, led by John Downer. This year's event includes workshops on typography, design systems, branding, and more."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/workshop4.jpg" alt=""></picture>
+        <picture><img src="img/review1.jpg" alt="Students and young professionals get feedback on their work and presenting skills at the Portfolio Review event."></picture>
         <figcaption></figcaption>
       </figure>
       <figure class="slide">
-        <picture><img src="img/review1.jpg" alt=""></picture>
-        <figcaption></figcaption>
-      </figure>
-      <figure class="slide">
-        <picture><img src="img/workshop3.jpg" alt=""></picture>
+        <picture><img src="img/workshop3.jpg" alt="Letterpress printing workshop, led by Garrett Queen. This year's event includes workshops on typography, design systems, branding, and more."></picture>
         <figcaption></figcaption>
       </figure>
     </div>
@@ -169,8 +165,9 @@
         </div>
 
     </section>
-
     <section id="register">
+      <!--<h2>Register</h2>
+      <div id="eventbrite-widget-container-825271438087" ></div>-->
       <a class="round-btn" href="#register">Register</a>
     </section>
 
@@ -226,7 +223,26 @@
       }
     });
   </script>
+  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+  <script type="text/javascript">
+      var exampleCallback = function() {
+          console.log('Order complete!');
+      };
+  
+      window.EBWidgets.createWidget({
+          // Required
+          widgetType: 'checkout',
+          eventId: '825271438087',
+          iframeContainerId: 'eventbrite-widget-container-825271438087',
+  
+          // Optional
+          iframeContainerHeight: 1200,  // Widget height in pixels. Defaults to a minimum of 625px if not provided
+          onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+      });
+  </script>
   
 
 </body>
+
 </html>
