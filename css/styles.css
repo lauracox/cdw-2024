@@ -173,6 +173,13 @@ section {
 	margin: unset;
 }
 
+/*  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+	h1 size at 375px and below screen: 34px
+	h1 size at 1200px and above screen: 90px
+
+*/
+
 h1 {
 	font-size: calc(34px + (90 - 34) * ((100vw - 375px) / (1200 - 375)));
 	color: var(--text-light);
