@@ -831,6 +831,10 @@ input[type="submit"]:active {
 		text-align: right;
 	}
 
+	#meetup p {
+		padding-top: .5em;
+	}
+
 	#insta a {
 		flex-flow: row nowrap;
 		align-items: flex-start;
