@@ -1,0 +1,338 @@
+/* Event Page Styles */
+
+/* Header */
+
+#header .subtitle {
+	text-align: center;
+	color: var(--color-white);
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+	font-size: 2em;
+}
+
+#header .details {
+	display: inline-block;
+	border-color: var(--color-white);
+	margin: 2em;
+	text-align: left;
+	float: right;
+}
+
+#header .details p {
+	color: var(--color-white);
+}
+
+/* About */
+
+#about {
+	flex-flow: row wrap;
+}
+
+#about h2 {
+	font-size: 2em;
+	line-height: 1.25;
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+	color: var(--brand-color3);
+}
+
+#about .columns {
+	width: 100%;
+	margin-top: var(--lg-space);
+}
+
+#about .columns ol {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0;
+	padding: 0;
+}
+
+#about .columns ol li {
+	font-size: 1em;
+	flex-shrink: 0;
+}
+
+#about .columns ol h3 {
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+	color: var(--brand-color3);
+}
+
+#about .columns ol p {
+	font-size: .8em;
+}
+
+/* Feature */
+
+#feature ul {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.tile {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"img"
+		"text"
+		"btn";
+	grid-gap: var(--sm-space);
+	color: var(--color-white);
+}
+
+.tile .text {
+	border-left: 2px solid var(--brand-color3);
+	padding: 0 var(--md-space);
+}
+
+.tile h4 {
+	font-size: 1.5em;
+	font-variation-settings: "wght" 400, "wdth" 150, "ital" 0;
+}
+
+.tile .white-btn {
+	justify-self: start;
+}
+
+
+/* Schedule */
+
+.card {
+	padding-right: var(--xl-space);
+}
+
+.card h3 {
+	font-style: normal;
+}
+
+.card.simple li {
+	grid-template-rows: auto;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"header"
+		"text";
+	max-width: 600px;
+}
+
+.time-block {
+	padding: var(--sm-space) 0;
+	border-top: 2px solid var(--brand-color3);
+}
+
+.time-block h3, .time-block h4 {
+	display: inline-block;
+}
+
+.time-block h3 {
+	font-family: "nitti", monospace;
+	font-weight: 400;
+	font-size: 1.5em;
+	color: var(--brand-color1);
+}
+
+.time-block h4 {
+	font-size: 1.8em;
+	line-height: 1.2em;
+	padding-bottom: var(--sm-space);
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+	color: var(--brand-color1);
+	position: relative;
+	top: var(--xs-space);
+}
+
+.standout {
+	display: grid;
+	position: relative;
+}
+
+.standout .details {
+	float: unset;
+}
+
+/* Event Specific Styles */
+
+/* Forum Page */
+
+#forum .card li {
+	grid-gap: var(--sm-space);
+}
+
+#forum .card.panel li {
+	grid-template-areas:
+		"header header"
+		"text text"
+		"text text";
+	grid-gap: var(--sm-space);
+}
+
+#forum .card li img {
+	grid-area: img;
+}
+
+#forum .card li a {
+	align-self: start;
+}
+
+.topic h3 {
+	font-size: 4em;
+	font-variation-settings: "wght" 800, "wdth" 80, "ital" 0;
+	color: var(--brand-color1);
+	padding: .5em 0 0 0;
+	line-height: 1;
+}
+
+.topic h4 {
+	font-size: 1.5em;
+	font-family: "nitti", monospace;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: uppercase;
+	color: var(--brand-color1);
+}
+
+#forum #feature .tile {
+	align-self: start;
+}
+
+/* Workshop Page */
+
+#workshops .card li {
+	grid-template-areas:
+		"header header"
+		"img details"
+		"img text";
+	grid-gap: var(--sm-space);
+}
+
+#workshops .card li .details {
+	justify-self: start;
+	margin: 0 0 1em 0;
+}
+
+/* Firm Crawl Page */
+
+/* Film Page */
+
+
+
+@media screen and (max-width: 1000px) {
+
+
+	#about .text {width: 100%;}
+
+	#about .image img {
+		width: 100%;
+		margin-bottom: var(--md-space);
+	}
+
+	#about .columns ol li {
+		width: clamp(300px, 35%, 400px);
+		margin: 0 var(--lg-space);
+	}
+
+	.time-block {
+		margin-bottom: var(--md-space);
+	}
+
+	.time-block h3 {
+		display: block;
+	}
+
+	.card, .standout {
+		margin-left: 10%;
+	}
+
+	.standout {
+		grid-template-rows: auto;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"header"
+			"details"
+			"text"
+			"button";
+		max-width: 600px;
+	}
+
+	#forum .card li {
+		grid-template-areas:
+			"header"
+			"img"
+			"details"
+			"text"
+			"button";
+	}
+
+	#forum #feature .tile {
+		width: 100%;
+		margin: var(--lg-space) 0;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+
+	#about .text {width: 39%;}
+
+	#about .image {width: 59%;}
+
+	#about .image img {
+		width: 100%;
+		padding: 0 var(--lg-space) var(--md-space) 0;
+	}
+
+	#about .columns ol li {
+		width: clamp(240px, 28%, 400px);
+		margin: 0 var(--md-space);
+	}
+
+	.time-block {
+		margin-bottom: var(--lg-space);
+	}
+
+	.time-block h3 {
+		width: 40%;
+	}
+
+	.card, .standout {
+		margin-left: 25%;
+	}
+
+	.standout {
+		grid-template-rows: auto;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"header details"
+			"text details"
+			"button .";
+		bottom: var(--lg-space);
+	}
+
+	#forum .card li {
+		grid-template-areas:
+			"header details"
+			"img button"
+			"text text";
+	}
+
+	#forum .card .details {
+		justify-self: start;
+		margin: 0 0 var(--sm-space) 0;
+	}
+
+	#forum #feature .tile {
+		width: 45%;
+		margin: var(--sm-space);
+	}
+}
+
+
+@media screen and (min-width: 1500px) {
+	#about .columns ol {
+		justify-content: space-between;
+	}
+
+	#forum .time-block h4 {
+		position: relative;
+		left: var(--md-space);
+	}
+}
+

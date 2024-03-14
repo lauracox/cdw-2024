@@ -1,0 +1,405 @@
+/* LOAD TYPE */
+@import url("https://use.typekit.net/fbg4huv.css");
+
+/* VARIABLES */
+:root {
+	--brand-color1: #ee2d24;
+	--brand-color2: #121233;
+	--brand-color3: #ffbd17;
+	--brand-color4: ;
+	--color-black: #000;
+	--color-white: #fff;
+	--text-dark: #222;
+	--text-light: #f2f2f2;
+
+	--xs-space: 5px;
+	--sm-space: calc(2*var(--xs-space)); 
+	--md-space: calc(4*var(--xs-space)); 
+	--lg-space: calc(10*var(--xs-space));
+	--xl-space: calc(15*var(--xs-space)); 
+	--xxl-space: calc(20*var(--xs-space)); 
+
+	--sm-margin: 5%;
+	--md-margin: 15%;
+	--lg-margin: 20%;
+
+	--card-size: 160px;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  text-decoration: none;
+}
+
+
+/* BASE STYLES */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "peridot-pe-variable", sans-serif;
+	font-variation-settings: "wght" 650, "wdth" 175, "ital" 0;
+	padding-bottom: 1em;
+}
+
+div, span, p, a, ol, ul, li, form, input {
+	font-family: "peridot-pe-variable", sans-serif;
+	font-variation-settings: "wght" 400, "wdth" 100, "ital" 0;
+	line-height: 1.7;
+}
+
+ul {list-style: none;}
+
+p, ul, ol {
+	max-width: 800px;
+	margin: auto;
+	padding-bottom: 1em;
+}
+
+a {
+	color: var(--brand-color3);
+	transition: all 0.3s;
+}
+
+a:hover {
+	color: var(--color-white);
+}
+
+.center-text {
+	text-align: center;
+}
+
+/* LAYOUT */
+
+html {
+	width: 100%;
+	height: 100%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+/* For Chrome & Safari */
+html::-webkit-scrollbar {
+	width: 5px;
+}
+html::-webkit-scrollbar-thumb {
+	background: var(--brand-color2);
+}
+html::-webkit-scrollbar-track {
+	background: transparent;
+}
+/* Standard version (Firefox only for now) */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: var(--brand-color2) transparent;
+}
+
+body {
+	width: 100%;
+  height: 100%;
+  text-rendering: optimizeSpeed;
+  font-size: 18px;
+  line-height: 1.25;
+  display: grid;
+}
+
+header {
+	width: 100%;
+	z-index: 10;
+	background: var(--brand-color1)
+}
+
+header nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--sm-space) 0;
+	margin: 0 var(--sm-space);
+}
+
+header svg {
+	height: 50px;
+	fill: var(--color-white);
+	transition: all 0.3s;
+}
+
+header svg:hover {
+	fill: var(--brand-color3);
+}
+
+main {
+	background: var(--brand-color1);
+}
+
+section {
+	padding: var(--xxl-space) 0;
+}
+
+/* RECURRING STYLES */
+
+.round-btn {
+	font-family: "nitti", monospace;
+	font-weight: 700;
+	font-size: 32px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	padding: var(--xs-space) var(--lg-space) var(--xs-space) var(--lg-space);
+	border: 3px solid var(--brand-color3);
+	border-radius: var(--lg-space);
+	background: var(--brand-color3);
+	color: var(--brand-color2);
+	cursor: pointer;
+	position: relative;
+	top: 25%;
+	transition: all 0.3s;
+}
+
+.round-btn:hover {
+	background: transparent;
+	color: var(--color-white);
+	border-color: var(--color-white);
+}
+
+.round-btn:active {
+	background: transparent;
+	color: var(--brand-color3);
+	border-color: var(--brand-color3);
+}
+
+
+/* SECTION STYLES */
+
+/* Hero */
+
+#hero {
+	padding: var(--xxl-space) 0 var(--lg-space) 0;
+	margin: unset;
+}
+
+/*  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+	h1 size at 375px and below screen: 34px
+	h1 size at 1200px and above screen: 90px
+
+*/
+
+h1 {
+	font-size: calc(34px + (90 - 34) * ((100vw - 375px) / (1200 - 375)));
+	color: var(--text-light);
+	padding-bottom: 0;
+	line-height: 0.9;
+	font-variation-settings: "wght" 400, "wdth" 150;
+	margin-bottom: .15em;
+}
+
+#hero p {
+	font-family: "nitti", monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 30px;
+	text-transform: uppercase;
+	color: var(--brand-color2);
+	padding-bottom: .5em;
+}
+
+#hero p:last-of-type {
+	padding-bottom: 2em;
+}
+
+.carousel {
+	width: 100%;
+	height: 400px;
+	margin-top: 1rem;
+}
+
+.carousel::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: var(--brand-color1);
+	mix-blend-mode: multiply;
+}
+
+.slide {}
+
+.slide img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+
+
+/* Schedule */
+
+#schedule {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--card-size), 1fr));
+	grid-template-rows: auto;
+	grid-gap: 2em;
+	justify-content: center;
+	margin: 0 2em;
+}
+
+.card {
+	position: relative;
+	padding: 0 0 0 var(--md-space);
+	border-left: 2px solid var(--color-white);
+}
+
+.card h3 {
+	font-family: "nitti", monospace;
+	font-weight: 300;
+	font-style: italic;
+	text-transform: uppercase;
+	position: relative;
+	font-size: 1.3em;
+	color: var(--color-white);
+}
+
+.card h4 {
+	font-size: 1rem;
+	line-height: 1.2em;
+	padding-bottom: var(--sm-space);
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
+	color: var(--text-light);
+}
+
+/* Register */
+
+#register {
+	text-align: left;
+	margin: 0 2em;
+	color: var(--color-white)
+}
+
+/* Footer */
+
+footer {
+	background: var(--brand-color2);
+	color: var(--text-light);
+}
+
+#insta {
+	display: inline-block;
+	margin: var(--md-space);
+}
+
+#insta svg {
+	width: 40px;
+	fill: var(--brand-color3);
+	transition: all 0.3s;
+}
+
+#insta svg:hover {
+	fill: var(--color-white);
+}
+
+form {
+	padding-bottom: 2em;
+}
+
+#signup {
+	padding-bottom: 0;
+}
+
+input[type="email"] {
+	padding: var(--xs-space) var(--md-space);
+	border: 2px solid var(--brand-color3);
+	border-radius: var(--md-space);
+}
+
+input[type="email"]::selection {
+	color: var(--text-light);
+	background: var(--text-dark);
+}
+
+input[type="submit"] {
+	font-family: "nitti", monospace;
+	font-weight: 700;
+	padding: var(--xs-space) var(--sm-space);
+	margin: var(--xs-space) var(--sm-space);
+	background: var(--brand-color3);
+	border: 2px solid var(--brand-color3);
+	border-radius: var(--md-space);
+	color: var(--text-dark);
+	cursor: pointer;
+	transition: background ease var(--time1);
+}
+
+input[type="submit"]:hover {
+	background: transparent;
+	border: 2px solid var(--color-white);
+	color: var(--text-light);
+	transition: none;
+}
+
+input[type="submit"]:active {
+	color: var(--brand-color3);
+	border: 2px solid var(--brand-color3);
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1000px) {
+	body {
+		font-size: 16px;
+	}
+
+	header nav {
+		margin: 0 var(--sm-space);
+	}
+
+	footer {
+		padding: var(--lg-space) var(--sm-margin);
+	}
+
+}
+
+
+@media screen and (min-width: 1000px) {
+	header nav {
+		margin: 0 var(--md-margin);
+	}
+
+	footer {
+		padding: var(--lg-space) var(--md-margin);
+	}
+
+}
+
+
+@media screen and (min-width: 1600px) {
+	header nav {
+		margin: 0 var(--lg-margin);
+	}
+
+	#schedule, #register {
+		padding: var(--xxl-space) var(--lg-margin);
+	}
+
+	footer {
+		padding: var(--lg-space) var(--lg-margin);
+	}
+
+}
+
+@media screen and (min-width: 1200px) { 
+	h1 {
+		font-size: 90px;
+	}
+}
+
+@media screen and (max-width: 375px) { 
+	h1 {
+		font-size: 34px;
+	}
+}
