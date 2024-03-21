@@ -9,8 +9,6 @@
 	--brand-color4: ;
 	--color-black: #000;
 	--color-white: #fff;
-	--text-dark: #121233;
-	--text-light: #f2f2f2;
 	--bg-white: #f7f2f2;
 	--bg-dark: #0a0a2a;
 
@@ -59,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: calc(34px + (90 - 34) * ((100vw - 375px) / (1200 - 375)));
-	color: var(--text-light);
+	color: var(--color-white);
 	padding-bottom: 0;
 	line-height: 0.9;
 	font-variation-settings: "wght" 400, "wdth" 150;
@@ -326,7 +324,7 @@ header svg:hover {
 }
 
 .day a:hover {
-	color: var(--text-light);
+	color: var(--color-white);
 }
 
 /* Image slider */
@@ -432,10 +430,16 @@ header svg:hover {
 .card li h4 {
 	grid-area: header;
 	font-size: 1.8em;
-	line-height: 1.2em;
+	line-height: 1.2;
 	padding-bottom: var(--sm-space);
 	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
 	color: var(--brand-color1);
+}
+
+.card li h4 span {
+	display: inline-block;
+	line-height: 1;
+	font-variation-settings: "wght" 400, "wdth" 100, "ital" 10;
 }
 
 .card li p {grid-area: text;}
@@ -477,6 +481,11 @@ header svg:hover {
 
 /* Sponsors */
 
+#sponsors h3 {
+	color: var(--color-white);
+	padding-bottom: 3em;
+}
+
 #sponsors .logos {
 	display: grid;
 	align-items: center;
@@ -486,18 +495,14 @@ header svg:hover {
 	margin-bottom: 5vw;
 }
 
-#sponsors .logos.large * {
-	width: 12vw;
-}
-#sponsors .logos.medium * {
-	width: 9vw;
-}
-#sponsors .logos.small * {
-	width: 7.5vw;
-}
+#sponsors .logos.large a {width: 12vw;}
+#sponsors .logos.large a.long {width: 20vw;}
+#sponsors .logos.medium a {width: 9vw;}
+#sponsors .logos.small a {width: 7.5vw;}
 
 #sponsors .logos img {
-	height: 100%;
+	width: 100%;
+	height: auto;
 }
 
 /* Register */
@@ -511,7 +516,7 @@ header svg:hover {
 
 footer {
 	background: var(--bg-dark);
-	color: var(--text-light);
+	color: var(--color-white);
 	display: grid;
 }
 
@@ -563,8 +568,8 @@ input[type="email"] {
 }
 
 input[type="email"]::selection {
-	color: var(--text-light);
-	background: var(--text-dark);
+	color: var(--color-white);
+	background: var(--color-black);
 }
 
 input[type="submit"] {
@@ -576,7 +581,7 @@ input[type="submit"] {
 	background: var(--brand-color3);
 	border: 2px solid var(--brand-color3);
 	border-radius: var(--md-space);
-	color: var(--text-dark);
+	color: var(--color-black);
 	cursor: pointer;
 	transition: all .3s;
 }
@@ -584,7 +589,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background: transparent;
 	border: 2px solid var(--color-white);
-	color: var(--text-light);
+	color: var(--color-white);
 }
 
 input[type="submit"]:active {

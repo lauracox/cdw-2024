@@ -14,7 +14,6 @@
 	border-color: var(--color-white);
 	margin: 2em;
 	text-align: left;
-	float: right;
 }
 
 #header .details p {
@@ -145,10 +144,6 @@
 	position: relative;
 }
 
-.standout .details {
-	float: unset;
-}
-
 /* Event Specific Styles */
 
 /* Forum Page */
@@ -212,6 +207,15 @@
 /* Firm Crawl Page */
 
 /* Film Page */
+
+#film #header {
+	padding-bottom: var(--lg-space);
+}
+
+#film #week {
+	padding-top: 0;
+	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 200px));
+}
 
 
 
