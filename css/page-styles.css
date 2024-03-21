@@ -233,13 +233,6 @@
 
 .film {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas: 
-		"video video"
-		"h2 details"
-		"h3 details"
-		"text .";
 	grid-gap: var(--md-space);
 }
 
@@ -299,6 +292,9 @@
 			"sub";
 	}
 
+	#header .details {
+		justify-self: center;
+	}
 
 	#about .text {width: 100%;}
 
@@ -347,6 +343,24 @@
 	#forum #feature .tile {
 		width: 100%;
 		margin: var(--lg-space) 0;
+	}
+
+	.film {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: 
+			"video video"
+			"h2 h2"
+			"h3 details"
+			"text text";
+	}
+
+	.film .details {
+		place-self: end;
+	}
+
+	.film h3 {
+		align-self: center;
 	}
 }
 
@@ -411,6 +425,16 @@
 	#forum #feature .tile {
 		width: 45%;
 		margin: var(--sm-space);
+	}
+
+	.film {
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: 
+			"video video"
+			"h2 details"
+			"h3 details"
+			"text .";
 	}
 }
 
