@@ -2,15 +2,23 @@
 
 /* Header */
 
+#header {
+	display: grid;
+}
+
+#header h1 {
+	grid-area: title;
+}
+
 #header .subtitle {
-	text-align: center;
+	grid-area: sub;
 	color: var(--color-white);
 	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
 	font-size: 2em;
 }
 
 #header .details {
-	display: inline-block;
+	grid-area: details;
 	border-color: var(--color-white);
 	margin: 2em;
 	text-align: left;
@@ -144,6 +152,10 @@
 	position: relative;
 }
 
+.standout .details {
+	float: unset;
+}
+
 /* Event Specific Styles */
 
 /* Forum Page */
@@ -208,18 +220,84 @@
 
 /* Film Page */
 
-#film #header {
-	padding-bottom: var(--lg-space);
-}
-
 #film #week {
-	padding-top: 0;
+	grid-area: sub;
 	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 200px));
+	margin: 0;
+	align-items: center;
 }
 
+#film #week .day {
+	padding-bottom: var(--md-space);
+}
+
+.film {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"video video"
+		"h2 details"
+		"h3 details"
+		"text .";
+	grid-gap: var(--md-space);
+}
+
+.film .video {
+	grid-area: video;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+}
+
+.film iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.film h2 {
+	grid-area: h2;
+	padding-bottom: 0;
+}
+.film h3 {grid-area: h3;}
+.film .details {grid-area: details;}
+.film > p {grid-area: text;}
+
+.film.blue {
+	background: var(--brand-color2);
+}
+
+.film.blue h2, .film.white h2 {
+	color: var(--brand-color3);
+}
+
+.film.blue h3, .film.blue p {
+	color: var(--color-white);
+}
+
+.film.blue .details {
+	border-color: var(--color-white);
+}
+
+.film.white {
+	background: var(--bg-white);
+}
 
 
 @media screen and (max-width: 1000px) {
+
+	#header {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"title"
+			"details"
+			"sub";
+	}
 
 
 	#about .text {width: 100%;}
@@ -273,6 +351,14 @@
 }
 
 @media screen and (min-width: 1000px) {
+
+	#header {
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+			"title title"
+			"sub details";
+	}
 
 	#about .text {width: 39%;}
 
