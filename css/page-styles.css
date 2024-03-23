@@ -12,9 +12,13 @@
 
 #header .subtitle {
 	grid-area: sub;
-	color: var(--color-white);
-	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
-	font-size: 2em;
+	font-family: "nitti", monospace;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 30px;
+	text-transform: uppercase;
+	color: var(--brand-color2);
+	padding-bottom: .5em;
 }
 
 #header .details {
@@ -26,6 +30,17 @@
 
 #header .details p {
 	color: var(--color-white);
+}
+
+#week {
+	grid-area: week;
+	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 200px));
+	margin: var(--md-space) 0 0 0;
+	align-items: start;
+}
+
+#week .day {
+	padding-bottom: var(--md-space);
 }
 
 /* About */
@@ -216,27 +231,45 @@
 	margin: 0 0 1em 0;
 }
 
-/* Firm Crawl Page */
+/* Open House Page */
+
+#open-houses .card li {
+	grid-gap: var(--sm-space);
+}
+
+#open-houses .card li img {
+	grid-area: img;
+}
+
+#open-houses .card li h4 {
+	align-self: end;
+	padding-bottom: 0;
+}
+
+#open-houses .card li .details {
+	margin: 0;
+}
+
+#open-houses .card li a {
+	justify-self: end;
+	top: unset;
+	right: unset;
+	margin: 0;
+}
 
 /* Film Page */
 
-#film #week {
-	grid-area: sub;
-	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 200px));
-	margin: 0;
-	align-items: center;
+#film .time-block {
+	margin-bottom: 0;
 }
 
-#film #week .day {
-	padding-bottom: var(--md-space);
+#film .time-block h3 {
+	font-weight: 400;
+	font-style: italic;
+	letter-spacing: 2px;
 }
 
-.film {
-	display: grid;
-	grid-gap: var(--md-space);
-}
-
-.film .video {
+#film .video {
 	grid-area: video;
 	position: relative;
 	width: 100%;
@@ -244,7 +277,7 @@
 	padding-bottom: 56.25%;
 }
 
-.film iframe {
+.video iframe {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -252,33 +285,38 @@
 	top: 0;
 }
 
-.film h2 {
+#film .card {
+	border-top: none;
+	padding-top: 0;
+}
+
+#film .card li {
+	grid-gap: var(--sm-space);
+}
+
+#film .card ul {
+	width: 100%;
+}
+
+#film .card h2 {
 	grid-area: h2;
 	padding-bottom: 0;
 }
-.film h3 {grid-area: h3;}
-.film .details {grid-area: details;}
-.film > p {grid-area: text;}
 
-.film.blue {
-	background: var(--brand-color2);
+#film .card h3 {
+	grid-area: h3;
+	letter-spacing: 0;
+	text-transform: initial;
+	width: 100%;
 }
 
-.film.blue h2, .film.white h2 {
-	color: var(--brand-color3);
+#film .card h3 span {
+	display: block;
 }
 
-.film.blue h3, .film.blue p {
-	color: var(--color-white);
-}
+#film .card .details {grid-area: details;}
+#film .card li > p {grid-area: text;}
 
-.film.blue .details {
-	border-color: var(--color-white);
-}
-
-.film.white {
-	background: var(--bg-white);
-}
 
 
 @media screen and (max-width: 1000px) {
@@ -288,8 +326,9 @@
 		grid-template-rows: auto;
 		grid-template-areas:
 			"title"
+			"sub"
 			"details"
-			"sub";
+			"week";
 	}
 
 	#header .details {
@@ -345,21 +384,31 @@
 		margin: var(--lg-space) 0;
 	}
 
-	.film {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto;
-		grid-template-areas: 
-			"video video"
-			"h2 h2"
-			"h3 details"
-			"text text";
+	#open-houses .card li {
+		grid-template-areas:
+			"img"
+			"header"
+			"details"
+			"text"
+			"button";
 	}
 
-	.film .details {
+	#film .card li {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: 
+			"video"
+			"h2"
+			"h3"
+			"details"
+			"text";
+	}
+
+	#film .card li .details {
 		place-self: end;
 	}
 
-	.film h3 {
+	#film .card li h3 {
 		align-self: center;
 	}
 }
@@ -371,7 +420,8 @@
 		grid-template-rows: 1fr 1fr;
 		grid-template-areas:
 			"title title"
-			"sub details";
+			"sub sub"
+			"week details";
 	}
 
 	#about .text {width: 39%;}
@@ -393,7 +443,7 @@
 	}
 
 	.time-block h3 {
-		width: 40%;
+		width: 25%;
 	}
 
 	.card, .standout {
@@ -410,7 +460,7 @@
 		bottom: var(--lg-space);
 	}
 
-	#forum .card li {
+	#forum .card li{
 		grid-template-areas:
 			"header details"
 			"img button"
@@ -427,14 +477,21 @@
 		margin: var(--sm-space);
 	}
 
-	.film {
-		grid-template-columns: 2fr 1fr;
+	#open-houses .card li {
+		grid-template-areas:
+			"img details"
+			"header button"
+			"text text";
+	}
+
+	#film .card li {
+		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto;
 		grid-template-areas: 
 			"video video"
-			"h2 details"
+			"h2 h2"
 			"h3 details"
-			"text .";
+			"text text";
 	}
 }
 
