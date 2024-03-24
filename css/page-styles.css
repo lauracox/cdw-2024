@@ -34,9 +34,10 @@
 
 #week {
 	grid-area: week;
-	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 200px));
+	grid-template-columns: repeat(auto-fit, minmax(var(--day-size), 1fr));
 	margin: var(--md-space) 0 0 0;
 	align-items: start;
+	justify-content: space-evenly;
 }
 
 #week .day {
@@ -98,7 +99,7 @@
 		"img"
 		"text"
 		"btn";
-	grid-gap: var(--sm-space);
+	gap: var(--sm-space);
 	color: var(--color-white);
 }
 
@@ -119,10 +120,6 @@
 
 /* Schedule */
 
-.card {
-	padding-right: var(--xl-space);
-}
-
 .card h3 {
 	font-style: normal;
 }
@@ -133,7 +130,6 @@
 	grid-template-areas:
 		"header"
 		"text";
-	max-width: 600px;
 }
 
 .time-block {
@@ -141,9 +137,6 @@
 	border-top: 2px solid var(--brand-color3);
 }
 
-.time-block h3, .time-block h4 {
-	display: inline-block;
-}
 
 .time-block h3 {
 	font-family: "nitti", monospace;
@@ -167,16 +160,17 @@
 	position: relative;
 }
 
-.standout .details {
-	float: unset;
-}
 
 /* Event Specific Styles */
 
 /* Forum Page */
 
+#forum #week h3 {
+	line-height: 1.1;
+}
+
 #forum .card li {
-	grid-gap: var(--sm-space);
+	gap: var(--xs-space) var(--md-space);
 }
 
 #forum .card.panel li {
@@ -184,11 +178,13 @@
 		"header header"
 		"text text"
 		"text text";
-	grid-gap: var(--sm-space);
+	gap: var(--sm-space);
 }
 
 #forum .card li img {
 	grid-area: img;
+    width: 100%;
+    height: auto;
 }
 
 #forum .card li a {
@@ -223,7 +219,7 @@
 		"header header"
 		"img details"
 		"img text";
-	grid-gap: var(--sm-space);
+	gap: var(--sm-space);
 }
 
 #workshops .card li .details {
@@ -234,7 +230,7 @@
 /* Open House Page */
 
 #open-houses .card li {
-	grid-gap: var(--sm-space);
+	gap: var(--sm-space);
 }
 
 #open-houses .card li img {
@@ -259,6 +255,10 @@
 
 /* Film Page */
 
+#film #header h1 {
+	margin-bottom: var(--xl-space);
+}
+
 #film .time-block {
 	margin-bottom: 0;
 }
@@ -275,6 +275,7 @@
 	width: 100%;
 	height: 0;
 	padding-bottom: 56.25%;
+	margin-bottom: var(--md-space);
 }
 
 .video iframe {
@@ -291,7 +292,7 @@
 }
 
 #film .card li {
-	grid-gap: var(--sm-space);
+	gap: var(--sm-space);
 }
 
 #film .card ul {
@@ -301,6 +302,8 @@
 #film .card h2 {
 	grid-area: h2;
 	padding-bottom: 0;
+	line-height: 1.15;
+	font-variation-settings: "wght" 500, "wdth" 100, "ital" 0;
 }
 
 #film .card h3 {
@@ -308,6 +311,7 @@
 	letter-spacing: 0;
 	text-transform: initial;
 	width: 100%;
+	padding-bottom: 0;
 }
 
 #film .card h3 span {
@@ -323,7 +327,7 @@
 
 	#header {
 		grid-template-columns: 1fr;
-		grid-template-rows: auto;
+		grid-template-rows: min-content;
 		grid-template-areas:
 			"title"
 			"sub"
@@ -355,10 +359,6 @@
 		display: block;
 	}
 
-	.card, .standout {
-		margin-left: 10%;
-	}
-
 	.standout {
 		grid-template-rows: auto;
 		grid-template-columns: 1fr;
@@ -367,10 +367,10 @@
 			"details"
 			"text"
 			"button";
-		max-width: 600px;
 	}
 
-	#forum .card li {
+	#forum .card li,
+	#open-houses .card li {
 		grid-template-areas:
 			"header"
 			"img"
@@ -400,8 +400,8 @@
 			"video"
 			"h2"
 			"h3"
-			"details"
-			"text";
+			"text"
+			"details";
 	}
 
 	#film .card li .details {
@@ -417,7 +417,7 @@
 
 	#header {
 		grid-template-columns: 2fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: min-content;
 		grid-template-areas:
 			"title title"
 			"sub sub"
@@ -440,14 +440,12 @@
 
 	.time-block {
 		margin-bottom: var(--lg-space);
+		display: flex;
+		flex-flow: row nowrap;
 	}
 
-	.time-block h3 {
-		width: 25%;
-	}
-
-	.card, .standout {
-		margin-left: 25%;
+	.card ul {
+		margin: 0 var(--lg-space);
 	}
 
 	.standout {
@@ -457,19 +455,37 @@
 			"header details"
 			"text details"
 			"button .";
-		bottom: var(--lg-space);
 	}
 
-	#forum .card li{
+	#forum .card h3 {
+		width: unset;
+		flex-basis: initial;
+	}
+
+	#forum .time-block h4,
+	#open-houses .time-block h4 {
+		margin: 0 var(--lg-space);
+	}
+
+	#forum .card ul {width: unset;}
+
+	#forum .card li,
+	#open-houses .card li {
 		grid-template-areas:
-			"header details"
-			"img button"
-			"text text";
+			"img header"
+			"img details"
+			"img text"
+			"img button";
 	}
 
-	#forum .card .details {
+	#forum .card .details,
+	#open-houses .card .details {
 		justify-self: start;
 		margin: 0 0 var(--sm-space) 0;
+	}
+
+	#open-houses .card li a {
+		justify-self: start;
 	}
 
 	#forum #feature .tile {
@@ -477,22 +493,18 @@
 		margin: var(--sm-space);
 	}
 
-	#open-houses .card li {
-		grid-template-areas:
-			"img details"
-			"header button"
-			"text text";
-	}
-
 	#film .card li {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		grid-template-rows: auto;
 		grid-template-areas: 
 			"video video"
-			"h2 h2"
+			"h2 details"
 			"h3 details"
 			"text text";
+		gap: var(--md-space);
 	}
+
+	#film .card .details {justify-self: start;}
 }
 
 

@@ -181,10 +181,20 @@ section {padding: var(--xxl-space) var(--xl-space);}
 	right: var(--sm-space);
 }
 
+.red-btn svg,
+.white-btn svg {
+	transition: .6s;
+}
+
 .red-btn:hover {
 	background: transparent;
 	color: var(--brand-color1);
 	border-color: var(--brand-color1);
+}
+
+.red-btn:hover svg,
+.white-btn:hover svg {
+	transform: rotate(45deg);
 }
 
 .red-btn:active {
@@ -479,7 +489,25 @@ header svg:hover {
 	border-color: var(--color-white);
 }
 
+.tbd {
+	font-size: 1.2em;
+	font-variation-settings: "wght" 700, "wdth" 100, "ital" 10;
+	line-height: 1.25;
+	margin-top: var(--sm-space);
+	color: var(--brand-color1);
+}
+
+/* Register */
+
+#register {
+	text-align: left;
+}
+
 /* Sponsors */
+
+#sponsors {
+	background: var(--brand-color2);
+}
 
 #sponsors h3 {
 	color: var(--color-white);
@@ -496,20 +524,14 @@ header svg:hover {
 }
 
 #sponsors .logos.large a {width: 12vw;}
-#sponsors .logos.large a.long {width: 20vw;}
+#sponsors .logos.large a.long {width: 16vw;}
+#sponsors .logos.large a.xlong {width: 22vw;}
 #sponsors .logos.medium a {width: 9vw;}
 #sponsors .logos.small a {width: 7.5vw;}
 
 #sponsors .logos img {
 	width: 100%;
 	height: auto;
-}
-
-/* Register */
-
-#register {
-	text-align: left;
-	background: var(--brand-color2);
 }
 
 /* Footer */
@@ -785,8 +807,8 @@ input[type="submit"]:active {
 	}
 
 	#about .image {
-		width: 50%;
-		margin-left: var(--sm-space);
+		width: 45%;
+		padding-left: var(--md-space);
 	}
 
 	#schedule h2, #register h2 {
