@@ -41,7 +41,7 @@
 }
 
 #week .day {
-	padding-bottom: var(--md-space);
+	padding: 0 var(--md-space);
 }
 
 /* About */
