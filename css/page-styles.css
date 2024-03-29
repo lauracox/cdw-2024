@@ -330,6 +330,21 @@
 	border: none;
 }
 
+#workshops #register .subtitle {
+	color: white;
+	font-size: 1.2em;
+	margin-bottom:1em;
+}
+
+#workshops .code {
+	font-family: 'Nitti', monospace;
+	background-color: var(--brand-color2);
+}
+
+#workshops #register h2 {
+	padding-bottom: 0px;
+}
+
 
 /* Open House Page */
 
