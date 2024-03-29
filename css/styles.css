@@ -364,7 +364,7 @@ header svg:hover {
 /* About */
 
 #about {
-	display: flex;
+	/*display: flex;*/
 	background: var(--brand-color2);
 	color: var(--color-white);
 }
@@ -427,7 +427,7 @@ header svg:hover {
 }
 
 .card li {
-	padding: var(--sm-space) 0 var(--lg-space) 0;
+	padding: var(--sm-space) 0 var(--md-space) 0;
 	display: grid;
 	justify-items: start;
 	align-items: start;
@@ -523,11 +523,11 @@ header svg:hover {
 	margin-bottom: 5vw;
 }
 
-#sponsors .logos.large a {width: 12vw;}
+#sponsors .logos.large a {width: 8vw;}
 #sponsors .logos.large a.long {width: 16vw;}
 #sponsors .logos.large a.xlong {width: 22vw;}
-#sponsors .logos.medium a {width: 9vw;}
-#sponsors .logos.small a {width: 7.5vw;}
+#sponsors .logos.medium a {width: 6vw;}
+#sponsors .logos.small a {width: 4.5vw;}
 
 #sponsors .logos img {
 	width: 100%;
@@ -694,7 +694,7 @@ input[type="submit"]:active {
 	section {
 		padding: var(--xl-space) var(--sm-margin);
 	}
-
+/*
 	#about {
 		flex-flow: column;
 	}
@@ -706,7 +706,7 @@ input[type="submit"]:active {
 	#about .image img {
 		width: 100%;
 		margin-top: var(--md-space);
-	}
+	}*/
 
 	#schedule h2, #register h2 {
 		font-size: 2.5rem;
@@ -744,6 +744,12 @@ input[type="submit"]:active {
 	.details {
 		margin: var(--sm-space) 0 var(--md-space) 0;
 	}
+
+	#sponsors .logos.large a {width: 14vw;}
+#sponsors .logos.large a.long {width: 22vw;}
+#sponsors .logos.large a.xlong {width: 29vw;}
+#sponsors .logos.medium a {width: 10vw;}
+#sponsors .logos.small a {width: 7.5vw;}
 
 	footer {
 		grid-template-rows: auto;
@@ -813,7 +819,7 @@ input[type="submit"]:active {
 	#about {
 		flex-flow: row;
 	}
-
+/*
 	#about .text {
 		width: 60%;
 	}
@@ -821,7 +827,7 @@ input[type="submit"]:active {
 	#about .image {
 		width: 45%;
 		padding-left: var(--md-space);
-	}
+	}*/
 
 	#schedule h2, #register h2 {
 		font-size: 3rem;
