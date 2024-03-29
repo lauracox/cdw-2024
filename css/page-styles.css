@@ -221,7 +221,7 @@
 	grid-column: 2/-1 ;
 }
 
-#forum #about, #forum #about .columns ol, #workshops #about, #open-houses #about, #home #about {
+#forum #about, #forum #about .columns ol, #about {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	gap: var(--lg-space);
@@ -233,13 +233,13 @@
 
 
 
-#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+#about .text {
 	width: 100%;
 	grid-column: 4/7;
 	grid-row: 2/4;
 }
 
-#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
+#about img {
 	grid-column: 1/4;
 	width: 100%;
 	grid-row: 1/5;
@@ -524,7 +524,7 @@
 	}
 
 	.time-block {
-		margin-bottom: var(--md-space);
+		margin-bottom: var(--sm-space);
 	}
 
 	.time-block h3 {
@@ -593,7 +593,7 @@
 	}
 
 	.time-block {
-		margin-bottom: var(--lg-space);
+		margin-bottom: var(--md-space);
 		display: flex;
 		flex-flow: row nowrap;
 	}
@@ -662,16 +662,16 @@
 
 @media screen and (max-width: 1200px) { 
 
-	#forum #about, #workshops #about, #open-houses #about, #home #about {
+ #home #about {
 		gap: var(--md-space);
 	}
 	
-	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+ #about .text {
 		width: 100%;;
 		grid-column: 4/7;
 		grid-row: 2/3;
 	}
-	#forum #about img, #workshops #about img, #home #about img {
+#about img {
 		grid-column: 1/4;
 		width: 100%;;
 	}
@@ -708,12 +708,12 @@
 	}
 
 
-	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+ #about .text {
 		width: 100%;;
 		grid-column: 2/6;
 		grid-row: 2/3;
 	}
-	#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
+#about img {
 		grid-column: 1/-1;
 		grid-row: 1/2;
 		width: 100%;
@@ -744,12 +744,12 @@
 		grid-column: 1/-1 ;
 	}
 
-	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+	 #about .text {
 		width: 100%;;
 		grid-column: 1/7;
 		grid-row: 2/3;
 	}
-	#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
+#about img {
 		grid-column: 1/-1;
 		grid-row: 1/2;
 		width: 100%;
