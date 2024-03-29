@@ -221,7 +221,7 @@
 	grid-column: 2/-1 ;
 }
 
-#forum #about, #forum #about .columns ol {
+#forum #about, #forum #about .columns ol, #workshops #about, #open-houses #about, #home #about {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	gap: var(--lg-space);
@@ -231,19 +231,15 @@
 	grid-column: 1 /-1;
 }
 
-#forum #about  h2 {
-	grid-column: 4/7;
-	padding-bottom: 0px;
-	grid-row: 2/3;
-}
 
-#forum #about .text {
+
+#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
 	width: 100%;
 	grid-column: 4/7;
-	grid-row: 3/4;
+	grid-row: 2/4;
 }
 
-#forum #about img {
+#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
 	grid-column: 1/4;
 	width: 100%;
 	grid-row: 1/5;
@@ -257,115 +253,7 @@
 
 }
 
-@media screen and (max-width: 1200px) { 
 
-	#forum #about {
-		gap: var(--md-space);
-	}
-	#forum #about  h2 {
-		grid-column: 4/7;
-		grid-row: 1/2;
-	}
-	
-	#forum #about .text {
-		width: 100%;;
-		grid-column: 4/7;
-		grid-row: 2/3;
-	}
-	#forum #about img {
-		grid-column: 1/4;
-		width: 100%;;
-	}
-
-}
-
-@media screen and (max-width: 850px) {
-	#forum .card h3 {
-		font-size: 1em;
-		margin-top: -6px;
-	}
-	
-	#forum .card {
-		display: grid;
-		grid-template-columns: 1fr 5fr;
-		grid-template-rows:auto;
-		gap: var(--md-space);
-	}
-	
-	#forum .speaker {
-		grid-template-columns: 1fr 5fr;
-		grid-template-areas:
-			"time img"
-			"time bio";
-	}
-
-	#forum #about .columns ol {
-		gap: var(--sm-space);
-	}
-	#forum #about .columns ol li {
-		margin: 0px;
-		grid-column: 2 / span 4;
-		width: 100%;
-	}
-
-	#forum #about  h2 {
-		grid-column: 2/6;
-		grid-row: 2/3;
-	}
-
-	#forum #about .text {
-		width: 100%;;
-		grid-column: 2/6;
-		grid-row: 3/4;
-	}
-	#forum #about img {
-		grid-column: 1/-1;
-		grid-row: 1/2;
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 650px) {
-	#forum .card h3 {
-		font-size: 1.5em;
-		padding-bottom: 0px;;
-	}
-	
-	#forum .card {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows:auto;
-		gap: var(--md-space);
-	}
-	
-	#forum .speaker {
-		grid-template-columns: 1fr;
-		grid-template-areas:
-			"time"
-			"img"
-			"bio";
-	}
-	#forum .standout {
-		grid-column: 1/-1 ;
-	}
-
-	#forum #about  h2 {
-		grid-column: 1/7;
-		grid-row: 2/3;
-	}
-
-	#forum #about .text {
-		width: 100%;;
-		grid-column: 1/7;
-		grid-row: 3/4;
-	}
-	#forum #about img {
-		grid-column: 1/-1;
-		grid-row: 1/2;
-		width: 100%;
-	}
-
-}
 
 .card h4 {
 	font-size: 1.8em;
@@ -398,32 +286,91 @@
 
 /* Workshop Page */
 
+#workshops .time-block {
+	margin-bottom: 0;
+}
+
+#workshops .card {
+	border: none;
+	display: block;
+}
+
+#workshops .block {
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--lg-space);
+}
+
 #workshops .card li {
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
-		"header header"
-		"img details"
-		"img text";
+		"img 0 0" 
+		"header header header"
+		"details details details"
+		"text text text";
 	gap: var(--sm-space);
+}
+
+#workshops .card li h4 {
+	padding-bottom: 0;
+}
+
+#workshops .card li img {
+
+	grid-area: img;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 #workshops .card li .details {
 	justify-self: start;
-	margin: 0 0 1em 0;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
+
 
 /* Open House Page */
 
+#open-houses .block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	gap:var(--lg-space);
+}
+
+#open-houses .block ul {
+	border-top: none;
+	width: 100%;
+	margin: 0;
+}
+
+#open-houses .card {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
 #open-houses .card li {
-	gap: var(--sm-space);
+	gap: var(--sm-space) var(--md-space);
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas: 
+	"text details"
+	"button 0";
 }
 
 #open-houses .card li img {
 	grid-area: img;
+	width: 100%;
+}
+
+#open-houses .card li .text {
+	grid-area: text;
 }
 
 #open-houses .card li h4 {
 	align-self: end;
-	padding-bottom: 0;
 }
 
 #open-houses .card li .details {
@@ -431,7 +378,7 @@
 }
 
 #open-houses .card li a {
-	justify-self: end;
+	justify-self: start;
 	top: unset;
 	right: unset;
 	margin: 0;
@@ -509,9 +456,29 @@
 #film .card .details {grid-area: details;}
 #film .card li > p {grid-area: text;}
 
+@media screen and (max-width: 850px) { 
+	#workshops .block, #open-houses .block {
 
+		display: grid;
+		grid-template-columns: 1fr;
+
+
+}}
 
 @media screen and (max-width: 1000px) {
+
+	#open-houses .card li {
+		gap: var(--sm-space) var(--md-space);
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		"details" 
+		"text"
+		"button";
+	}
+
+	#open-houses .card li .details {
+		justify-self: end;
+	 }
 
 	#header {
 		grid-template-columns: 1fr;
@@ -557,28 +524,11 @@
 			"button";
 	}
 
-	#open-houses .card li {
-		grid-template-areas:
-			"header"
-			"img"
-			"details"
-			"text"
-			"button";
-	}
-
 	#forum #feature .tile {
 		width: 100%;
 		margin: var(--lg-space) 0;
 	}
 
-	#open-houses .card li {
-		grid-template-areas:
-			"img"
-			"header"
-			"details"
-			"text"
-			"button";
-	}
 
 	#film .card li {
 		grid-template-columns: 1fr;
@@ -611,9 +561,9 @@
 			"week details";
 	}
 
-	#about .text {width: 39%;}
+	/*#about .text {width: 39%;}
 
-	#about .image {width: 59%;}
+	#about .image {width: 59%;}*/
 
 	#about .image img {
 		width: 100%;
@@ -652,14 +602,6 @@
 	}
 
 	#forum .card ul {width: unset;}
-
-	#open-houses .card li {
-		grid-template-areas:
-			"img header"
-			"img details"
-			"img text"
-			"img button";
-	}
 
 	#open-houses .card .details {
 		justify-self: start;
@@ -701,3 +643,99 @@
 	}
 }
 
+@media screen and (max-width: 1200px) { 
+
+	#forum #about, #workshops #about, #open-houses #about, #home #about {
+		gap: var(--md-space);
+	}
+	
+	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+		width: 100%;;
+		grid-column: 4/7;
+		grid-row: 2/3;
+	}
+	#forum #about img, #workshops #about img, #home #about img {
+		grid-column: 1/4;
+		width: 100%;;
+	}
+
+}
+
+@media screen and (max-width: 850px) {
+	#forum .card h3 {
+		font-size: 1em;
+		margin-top: -6px;
+	}
+	
+	#forum .card {
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+		grid-template-rows:auto;
+		gap: var(--md-space);
+	}
+	
+	#forum .speaker {
+		grid-template-columns: 1fr 5fr;
+		grid-template-areas:
+			"time img"
+			"time bio";
+	}
+
+	#forum #about .columns ol {
+		gap: var(--sm-space);
+	}
+	#forum #about .columns ol li {
+		margin: 0px;
+		grid-column: 2 / span 4;
+		width: 100%;
+	}
+
+
+	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+		width: 100%;;
+		grid-column: 2/6;
+		grid-row: 2/3;
+	}
+	#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	#forum .card h3 {
+		font-size: 1.5em;
+		padding-bottom: 0px;;
+	}
+	
+	#forum .card {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows:auto;
+		gap: var(--md-space);
+	}
+	
+	#forum .speaker {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"time"
+			"img"
+			"bio";
+	}
+	#forum .standout {
+		grid-column: 1/-1 ;
+	}
+
+	#forum #about .text, #workshops #about .text, #open-houses #about .text, #home #about .text {
+		width: 100%;;
+		grid-column: 1/7;
+		grid-row: 2/3;
+	}
+	#forum #about img, #workshops #about img, #open-houses #about img, #home #about img {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+		width: 100%;
+	}
+
+}
