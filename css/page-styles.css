@@ -339,6 +339,8 @@
 #workshops .code {
 	font-family: 'Nitti', monospace;
 	background-color: var(--brand-color2);
+	padding-left: .4em;
+	padding-right: .4em;
 }
 
 #workshops #register h2 {
